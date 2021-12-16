@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Enter Range</title>
+<style>
+* {box-sizing: border-box;}
+body {font-family: cursive;
+font-size:1.2rem;
+background:url(Dancingnum.gif);
+background-size:cover;
+height:100vh;
+
+}
+.glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+.glow-on-hover:active {
+    color: #000
+}
+.glow-on-hover:active:after {
+    background: transparent;
+}
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+</style>
+</head>
+<body align=center>
+<form action="pretasks">
+<table align="center">
+<tr>
+<td><h2>Choose a Range !!!</h2></td></tr>
+<tr><td><input type="text" name=minimum placeholder="Enter Minimum Value">
+<input type ="text" name="maximum" placeholder="Enter Maximum Value"></td></tr>
+</table>
+<h2>Instructions:</h2>
+<p style="font-weight: bold;">Enter a range and we will generate a magic number.</p>
+<p style="font-weight: bold;">You will have to guess the magic number in order to win the  game</p>
+<p style="font-weight: bold;">You will get score based on the number of attempts you took to guess correctly</p>
+<p style="font-weight: bold;">You will have a relief or buffer range.</p>
+<p style="font-weight: bold;">If you guess a number within the buffer your guess is considered as correct.</p>
+<p style="font-weight: bold;">For every 100 gap you will have  a buffer of 5.</p>
+<p style="font-weight: bold;">If the difference between maximum and minimum value is less than 100 then buffer is 2.</p>
+</body>
+<button class="glow-on-hover" role="button">Let's Play !!!</button>
+</form>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>LeaderBoard</title>
+</head>
+<style>
+* {box-sizing: border-box;}
+body {font-family: cursive;
+font-size:1.2rem;
+background:url(leaderboard.png);
+background-size:cover;
+
+
+}
+</style>
+<body align="center" marginheight="250" >
+<table align="center" cellpadding=8>
+<tr th:each="players:${players}">
+<td style="font-weight: bold;font-size:xx-large ;" th:text="${players.getUserName()}"/><td style="font-weight: bold;font-size:xx-large;" th:text="${players.getTotalScore()}"/>
+</table><br>
+<a style="font-weight: bold;color: blue;font-size: xx-large;"href="restart">Play Again !!</a>
+</body>
+</html>
