@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap">
+<style>
+* {box-sizing: border-box;}
+body {font-family: cursive;
+font-size:1.2rem;
+background:url(UserLost.png);
+background-size:cover;
+height:100vh;
+}
+</style>
+</head>
+<body align="center" >
+ <div class="signupbox">
+<h1>Sorry:(  You Lost</h1>
+<table align="center" cellpadding="5">
+<tr><td><h3th:text="${message}" /></td></tr>
+<tr><td><h3 th:text="'Magic Number is :'+${magicNumber}"></h3></tr>
+ <tr><h3 th:text="'Your Score: '+${score}" /></tr>
+<tr><h3 th:text="'Your TotalScore: '+${totalScore}" /></tr>
+
+</table>
+<a href="restart" style="font-size: large;color:blue;margin-right: 100px;font-weight:bold;">Home</a><i class="fa fa-user"></i>
+<a href="leaderBoard" style="font-size: large;color:blue;font-weight:bold;margin-right: 100px;">LeaderBoard</a><i class="fa fa-user"></i>
+<a style="font-weight: bold;color: blue;font-size: large;margin-right: 100px;"href="/">LogOut</a>
+</form>
+</div>
+</body>
+</html>
